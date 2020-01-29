@@ -36,9 +36,10 @@ public class ParcelAdapter extends RecyclerView.Adapter<ParcelAdapter.ParcelView
 
     }
 class ParcelViewHolder extends RecyclerView.ViewHolder {
-    TextView textViewAdress, textViewDelivery, textViewDate, textViewStatus,textViewType,textViewFragile;
+    TextView textViewAdress, textViewDelivery, textViewDate, textViewStatus,textViewType,textViewFragile,textViewName;
     public ParcelViewHolder(@NonNull View itemView) {
         super(itemView);
+        textViewName = itemView.findViewById(R.id.text_Rview_name);
         textViewStatus = itemView.findViewById(R.id.text_Rview_status);
         textViewDelivery = itemView.findViewById(R.id.text_Rview_type);
         textViewDate = itemView.findViewById(R.id.text_Rview_Date);
@@ -61,6 +62,12 @@ class ParcelViewHolder extends RecyclerView.ViewHolder {
     public void onBindViewHolder(@NonNull ParcelAdapter.ParcelViewHolder holder, int position) {
         Parcel parcel = parcelList.get(position);
         if (parcel != null) {
+
+            if (parcel.getDeliveryName()!= null)
+                holder.textViewName.setText("name: "+ parcel.getDeliveryName());
+            else
+                holder.textViewName.setText("name: No name");
+
             holder.textViewStatus.setText("status: " + parcel.getParcelStatus().name().toString());
             if (parcel.isIs_Fragile() == true) {
                 holder.textViewFragile.setText("warning, this packet is fragile");

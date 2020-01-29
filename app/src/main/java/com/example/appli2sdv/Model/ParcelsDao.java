@@ -31,4 +31,7 @@ public interface ParcelsDao {
 
         @Query("SELECT * FROM parcels_table ORDER BY DeliveryName DESC")
         LiveData<List<Parcel>> getAllParcels();
+
+        @Query("DELETE FROM parcels_table")
+        void deleteAllParcels();
 }

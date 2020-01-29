@@ -25,4 +25,9 @@ public class User_PacketsViewModel extends AndroidViewModel
         repository.getHistoryParcels();
         allparcels = repository.getAllParcels();
     }
+
+    public LiveData<List<Parcel>> getAllParcels() {
+
+        return allparcels;
+    }
 }

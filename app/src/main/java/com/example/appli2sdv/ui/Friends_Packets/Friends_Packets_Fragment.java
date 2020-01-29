@@ -1,6 +1,7 @@
 package com.example.appli2sdv.ui.Friends_Packets;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,7 @@ public class Friends_Packets_Fragment extends Fragment {
         {
             @Override
             public void onChanged(List<Parcel> parcels) {
+                Log.d("FriendsPacketsFragment", String.valueOf(parcels.size()));
                 myadapter.setList(parcels);
             }
         });

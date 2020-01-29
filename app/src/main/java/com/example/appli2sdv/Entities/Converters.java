@@ -98,7 +98,7 @@ public class Converters
     @TypeConverter
     public static String DateToString(Date mydate)
     {
-        return DateFormat.format("yyyy.MM.dd", mydate).toString();
+        return DateFormat.format("dd/MM/yyyy", mydate).toString();
     }
 
 }
